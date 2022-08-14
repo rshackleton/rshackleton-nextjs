@@ -24,11 +24,12 @@ const ArticleSummary: React.FC<ArticleSummaryProps> = (props) => {
     date: new Date(props.article.content.date),
     summary: props.article.content.summary,
     title: props.article.content.title,
+    url: `/${props.article.full_slug}`,
   };
 
   return (
     <article className="my-8">
-      <Link href={`/${props.article.full_slug}`}>
+      <Link href={model.url}>
         <a className="group block rounded-lg bg-primary-50 p-4">
           <h2 className="mb-2 border-b-2 border-b-transparent font-bold text-primary-900 transition text-lg group-hover:border-b-primary-900">
             {model.title}
