@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import type { PageProps } from '~/app';
 import Layout, { getLayoutProps } from '~/components/Layout/Layout';
-import type { ComponentData } from '~/components/StoryblokComponent';
+import type { ComponentUnion } from '~/components/StoryblokComponent';
 import StoryblokComponent from '~/components/StoryblokComponent';
 import { StoryblokService } from '~/storyblok/service';
 import type { ArticleStoryblok, PageStoryblok } from '~/storyblok/storyblok';
@@ -16,7 +16,7 @@ type ArticleModel = {
 };
 
 type ArticlesPageModel = {
-  content: ComponentData[];
+  content: ComponentUnion[];
   items: ArticleModel[];
   title: string;
 };
@@ -54,6 +54,7 @@ export const getStaticProps: GetStaticProps<ArticlesPageProps> = async (
 
   const itemData = await service.getStories<ArticleStoryblok>({
     is_startpage: 0,
+    sort_by: 'content.date:desc',
     starts_with: 'articles/',
   });
 

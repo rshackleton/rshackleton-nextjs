@@ -20,6 +20,20 @@ export interface ArticleStoryblok {
   [k: string]: any;
 }
 
+export interface ArticleSummaryStoryblok {
+  article: string;
+  _uid: string;
+  component: "articleSummary";
+  [k: string]: any;
+}
+
+export interface ContentBlockStoryblok {
+  content?: any;
+  _uid: string;
+  component: "contentBlock";
+  [k: string]: any;
+}
+
 
 export type MultilinkStoryblok =
   | {
@@ -72,5 +86,12 @@ export interface PageStoryblok {
   _uid: string;
   component: "page";
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface TweetStoryblok {
+  tweetUrl: string;
+  _uid: string;
+  component: "tweet";
   [k: string]: any;
 }

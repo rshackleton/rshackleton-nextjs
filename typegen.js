@@ -3,7 +3,9 @@ const { renameSync } = require('fs');
 const storyblokToTypescript = require('storyblok-generate-ts');
 
 // Load .env file for dev
-require('dotenv').config();
+require('dotenv').config({
+  path: '.env.development.local',
+});
 
 // Update component/present schema json
 execSync(

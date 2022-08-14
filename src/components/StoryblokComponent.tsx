@@ -1,20 +1,30 @@
-import type { SbBlokKeyDataTypes } from '@storyblok/js';
 import * as React from 'react';
-import type { StoryblokComponent as StoryblokComponentType } from 'storyblok-js-client';
+import type {
+  ContentBlockStoryblok,
+  HeroBannerStoryblok,
+} from '~/storyblok/storyblok';
+import ContentBlock from './ContentBlock/ContentBlock';
 import HeroBanner from './HeroBanner/HeroBanner';
 
-export type ComponentName = 'heroBanner';
+// Union of all supported component types.
+export type ComponentUnion = ContentBlockStoryblok | HeroBannerStoryblok;
 
-export type ComponentData = StoryblokComponentType<ComponentName> & {
-  [index: string]: SbBlokKeyDataTypes;
-};
+// Union of all supported component type names.
+export type ComponentName = Pick<ComponentUnion, 'component'>['component'];
 
-const components: Record<ComponentName, React.FC<any>> = {
+// Utility to convert each T in union to React.FC<T>.
+type UnionToProps<TUnion> = TUnion extends TUnion ? React.FC<TUnion> : never;
+
+// Map of component name to component type.
+type ComponentMap = Record<ComponentName, UnionToProps<ComponentUnion>>;
+
+const components: ComponentMap = {
+  contentBlock: ContentBlock,
   heroBanner: HeroBanner,
 };
 
 export type StoryblokComponentProps = {
-  data: ComponentData;
+  data: ComponentUnion;
 };
 
 const StoryblokComponent: React.FC<StoryblokComponentProps> = (props) => {
@@ -28,9 +38,9 @@ const StoryblokComponent: React.FC<StoryblokComponentProps> = (props) => {
     return <pre>No React component found for component type - {component}</pre>;
   }
 
-  const Component = components[component];
+  const Component = components[component] as React.FC<ComponentUnion>;
 
-  return React.createElement(Component, props.data as any);
+  return <Component {...props.data} />;
 };
 
 export default StoryblokComponent;

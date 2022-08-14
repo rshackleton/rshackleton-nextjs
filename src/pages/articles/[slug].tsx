@@ -19,14 +19,16 @@ const Article: NextPage<ArticlePageProps> = (props) => {
 
   return (
     <Layout {...props.layout}>
-      <div className="mx-auto px-4 text-center">
+      <div className="mx-auto max-w-3xl px-4 text-center">
         <h1 className="pb-4 font-bold text-2xl">{props.model.title}</h1>
         <div className="pb-8 font-medium text-lg">
           <time dateTime={date.toISOString()}>{formatDate(date)}</time>
         </div>
       </div>
 
-      <RichText className="px-4" content={props.model.content} />
+      <div className="mx-auto max-w-3xl px-4">
+        <RichText content={props.model.content} />
+      </div>
     </Layout>
   );
 
@@ -58,12 +60,14 @@ export const getStaticProps: GetStaticProps<ArticlePageProps> = async (
 
   const service = new StoryblokService(context.preview);
   const slug = `articles/${context.params.slug}`;
-  const data = await service.getStory<ArticleStoryblok>(slug);
+  const data = await service.getStory<ArticleStoryblok>(slug, {
+    resolve_relations: 'articleSummary.article',
+  });
 
   const model: ArticlePageModel = {
-    content: data.content.body,
-    date: data.content.date,
-    title: data.content.title,
+    content: data.content.body ?? [],
+    date: data.content.date ?? null,
+    title: data.content.title ?? null,
   };
 
   return {
