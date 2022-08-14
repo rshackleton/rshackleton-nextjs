@@ -1,15 +1,17 @@
 import type { GetStaticProps, NextPage } from 'next';
-import Layout, { getLayoutProps, WithLayout } from '~/components/Layout/Layout';
+import type { PageProps } from '~/app';
+import Layout, { getLayoutProps } from '~/components/Layout/Layout';
+import type { ComponentData } from '~/components/StoryblokComponent';
 import StoryblokComponent from '~/components/StoryblokComponent';
 import { StoryblokService } from '~/storyblok/service';
-import { PageStoryblok } from '~/storyblok/storyblok';
+import type { PageStoryblok } from '~/storyblok/storyblok';
 
 type HomePageModel = {
-  content: any[];
+  content: ComponentData[];
   title: string;
 };
 
-type HomePageProps = WithLayout<{ model: HomePageModel }>;
+type HomePageProps = PageProps<HomePageModel>;
 
 const Home: NextPage<HomePageProps> = (props) => {
   return (

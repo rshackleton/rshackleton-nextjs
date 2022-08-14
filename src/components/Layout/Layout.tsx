@@ -1,20 +1,16 @@
-import { StoryData } from '@storyblok/js';
-import { GetStaticPropsContext, PreviewData } from 'next';
-import { ParsedUrlQuery } from 'querystring';
+import type { StoryData } from '@storyblok/js';
+import type { GetStaticPropsContext, PreviewData } from 'next';
+import type { ParsedUrlQuery } from 'querystring';
 import * as React from 'react';
 import { StoryblokService } from '~/storyblok/service';
-import { MasterStoryblok, PageStoryblok } from '~/storyblok/storyblok';
+import type { MasterStoryblok, PageStoryblok } from '~/storyblok/storyblok';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import { NavigationItem } from '../Navigation/Navigation';
+import type { NavigationItem } from '../Navigation/Navigation';
 
 export type LayoutProps = {
   navigation: NavigationItem[];
   children: React.ReactNode;
-};
-
-export type WithLayout<TProps> = TProps & {
-  layout: Omit<LayoutProps, 'children'>;
 };
 
 const Layout: React.FC<LayoutProps> = (props) => {

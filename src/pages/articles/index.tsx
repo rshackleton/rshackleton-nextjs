@@ -1,9 +1,11 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
-import Layout, { getLayoutProps, WithLayout } from '~/components/Layout/Layout';
+import type { PageProps } from '~/app';
+import Layout, { getLayoutProps } from '~/components/Layout/Layout';
+import type { ComponentData } from '~/components/StoryblokComponent';
 import StoryblokComponent from '~/components/StoryblokComponent';
 import { StoryblokService } from '~/storyblok/service';
-import { ArticleStoryblok, PageStoryblok } from '~/storyblok/storyblok';
+import type { ArticleStoryblok, PageStoryblok } from '~/storyblok/storyblok';
 
 type ArticleModel = {
   id: string;
@@ -14,14 +16,12 @@ type ArticleModel = {
 };
 
 type ArticlesPageModel = {
-  content: any[];
+  content: ComponentData[];
   items: ArticleModel[];
   title: string;
 };
 
-type ArticlesPageProps = WithLayout<{
-  model: ArticlesPageModel;
-}>;
+type ArticlesPageProps = PageProps<ArticlesPageModel>;
 
 const Articles: NextPage<ArticlesPageProps> = (props) => {
   return (

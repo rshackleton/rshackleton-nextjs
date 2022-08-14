@@ -16,7 +16,7 @@ export class StoryblokService {
   private preview: boolean;
   private verbose: boolean;
 
-  constructor(preview: boolean = false) {
+  constructor(preview = false) {
     this.preview = preview; // from next.js preview mode
     this.verbose = process.env.LOG_VERBOSE === 'true';
 
@@ -33,7 +33,7 @@ export class StoryblokService {
     this.log('### creating StoryblokService instance\n');
     this.log('this.preview', this.preview);
     this.log('cacheVersions', storyblokApi.cacheVersions());
-    this.log('\n### end creating StoryblokService instance');
+    this.log('\n### end creating StoryblokService instance\n');
 
     storyblokApi.client.interceptors.request.use(
       (config) => {
@@ -42,7 +42,7 @@ export class StoryblokService {
           config.method,
           config.baseURL,
           config.url,
-          config.params,
+          JSON.stringify(config.params),
         );
         return config;
       },
@@ -67,7 +67,7 @@ export class StoryblokService {
       });
 
       // this.log(JSON.stringify(result));
-      this.log('\n### end calling StoryblokService.get');
+      this.log('\n### end calling StoryblokService.get\n');
 
       return result.data as T;
     } catch (error) {
@@ -94,7 +94,7 @@ export class StoryblokService {
       });
 
       // this.log(JSON.stringify(result));
-      this.log('\n### end calling StoryblokService.getStory');
+      this.log('\n### end calling StoryblokService.getStory\n');
 
       return result.data.story as StoryData<T>;
     } catch (error) {
@@ -118,7 +118,7 @@ export class StoryblokService {
     });
 
     // this.log(JSON.stringify(result));
-    this.log('\n### end calling StoryblokService.getStories');
+    this.log('\n### end calling StoryblokService.getStories\n');
 
     return result.data.stories as StoryData<T>[];
   }
