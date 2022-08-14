@@ -1,10 +1,9 @@
 import { storyblokEditable } from '@storyblok/js';
 import * as React from 'react';
 import type { HeroBannerStoryblok } from '~/storyblok/storyblok';
-import type { ComponentData } from '../StoryblokComponent';
 import StoryblokLink from '../StoryblokLink/StoryblokLink';
 
-export type HeroBannerProps = ComponentData & HeroBannerStoryblok;
+export type HeroBannerProps = HeroBannerStoryblok;
 
 const HeroBanner: React.FC<HeroBannerProps> = (props) => {
   return (

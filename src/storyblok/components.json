@@ -76,6 +76,62 @@
       "component_group_name": "Pages"
     },
     {
+      "name": "articleSummary",
+      "display_name": "Article Summary",
+      "created_at": "2022-08-14T21:21:35.685Z",
+      "updated_at": "2022-08-14T22:40:51.259Z",
+      "id": 2810947,
+      "schema": {
+        "article": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "display_name": "",
+          "source": "internal_stories",
+          "folder_slug": "articles/",
+          "filter_content_type": [
+            "article"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Article Summary",
+      "component_group_uuid": "32dafbcb-eede-4f50-954a-197daad86f09",
+      "color": null,
+      "icon": "block-text-img-c",
+      "component_group_name": "Content"
+    },
+    {
+      "name": "contentBlock",
+      "display_name": "Content Block",
+      "created_at": "2022-08-14T22:40:22.103Z",
+      "updated_at": "2022-08-14T22:40:41.695Z",
+      "id": 2810971,
+      "schema": {
+        "content": {
+          "type": "richtext"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Content Block",
+      "component_group_uuid": "32dafbcb-eede-4f50-954a-197daad86f09",
+      "color": null,
+      "icon": "block-text-c",
+      "component_group_name": "Content"
+    },
+    {
       "name": "heroBanner",
       "display_name": "Hero Banner",
       "created_at": "2022-08-13T12:22:42.560Z",
@@ -203,6 +259,32 @@
       "color": "#395ece",
       "icon": null,
       "component_group_name": "Pages"
+    },
+    {
+      "name": "tweet",
+      "display_name": null,
+      "created_at": "2022-08-14T22:04:32.627Z",
+      "updated_at": "2022-08-14T22:41:09.911Z",
+      "id": 2810959,
+      "schema": {
+        "tweetUrl": {
+          "type": "text",
+          "required": true,
+          "display_name": "Tweet URL"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "tweet",
+      "component_group_uuid": "32dafbcb-eede-4f50-954a-197daad86f09",
+      "color": null,
+      "icon": "block-share",
+      "component_group_name": "Content"
     }
   ]
 }
