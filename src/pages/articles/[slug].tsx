@@ -1,9 +1,10 @@
-import { Richtext } from '@storyblok/js';
+import type { Richtext } from '@storyblok/js';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import Layout, { getLayoutProps, WithLayout } from '~/components/Layout/Layout';
+import type { PageProps } from '~/app';
+import Layout, { getLayoutProps } from '~/components/Layout/Layout';
 import RichText from '~/components/RichText/RichText';
 import { StoryblokService } from '~/storyblok/service';
-import { ArticleStoryblok } from '~/storyblok/storyblok';
+import type { ArticleStoryblok } from '~/storyblok/storyblok';
 
 type ArticlePageModel = {
   content: Richtext;
@@ -11,9 +12,7 @@ type ArticlePageModel = {
   title: string;
 };
 
-type ArticlePageProps = WithLayout<{
-  model: ArticlePageModel;
-}>;
+type ArticlePageProps = PageProps<ArticlePageModel>;
 
 const Article: NextPage<ArticlePageProps> = (props) => {
   const date = new Date(props.model.date);
@@ -72,9 +71,25 @@ export const getStaticProps: GetStaticProps<ArticlePageProps> = async (
   };
 };
 
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const service = new StoryblokService();
+
+  const items = await service.getStories<ArticleStoryblok>({
+    filter_query: {
+      component: { in: 'article' },
+    },
+    is_startpage: 0,
+    starts_with: 'articles/',
+  });
+
+  const paths = items.map((item) => `/${item.full_slug}`);
+
+  console.log('### getStaticPaths\n');
+  console.log('paths', paths);
+  console.log('\n### end getStaticPaths\n');
+
   return {
     fallback: 'blocking',
-    paths: [],
+    paths,
   };
 };

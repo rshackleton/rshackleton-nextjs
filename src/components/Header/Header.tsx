@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import * as React from 'react';
-import Navigation, { NavigationItem } from '../Navigation/Navigation';
+import type { NavigationItem } from '../Navigation/Navigation';
+import Navigation from '../Navigation/Navigation';
 
 export type HeaderProps = {
   items: NavigationItem[];
