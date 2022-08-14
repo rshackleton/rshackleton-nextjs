@@ -1,0 +1,208 @@
+{
+  "components": [
+    {
+      "name": "article",
+      "display_name": "Article",
+      "created_at": "2022-08-12T22:35:39.128Z",
+      "updated_at": "2022-08-13T12:20:20.521Z",
+      "id": 2809566,
+      "schema": {
+        "tab-5dfc47d7-1b70-4320-a8af-676c53cfd972": {
+          "display_name": "Assets",
+          "keys": [
+            "thumbnail"
+          ],
+          "pos": 0,
+          "type": "tab",
+          "name": "tab-5dfc47d7-1b70-4320-a8af-676c53cfd972"
+        },
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "tab-c92c7900-f55a-403c-b935-424651d2f669": {
+          "display_name": "Taxonomy",
+          "keys": [
+            "tags",
+            "categories"
+          ],
+          "pos": 1,
+          "type": "tab",
+          "name": "tab-c92c7900-f55a-403c-b935-424651d2f669"
+        },
+        "thumbnail": {
+          "type": "asset",
+          "pos": 1,
+          "required": true,
+          "filetypes": [
+            "images"
+          ]
+        },
+        "date": {
+          "type": "datetime",
+          "pos": 2,
+          "disable_time": true,
+          "required": true
+        },
+        "summary": {
+          "type": "textarea",
+          "pos": 3,
+          "required": true
+        },
+        "body": {
+          "type": "richtext",
+          "pos": 4,
+          "required": true
+        },
+        "categories": {
+          "type": "options",
+          "source": "internal",
+          "datasource_slug": "categories",
+          "exclude_empty_option": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Article",
+      "component_group_uuid": "013c5f8d-12da-4b4a-a71d-9ca558bc34e9",
+      "color": "#ff6159",
+      "icon": null,
+      "component_group_name": "Pages"
+    },
+    {
+      "name": "heroBanner",
+      "display_name": "Hero Banner",
+      "created_at": "2022-08-13T12:22:42.560Z",
+      "updated_at": "2022-08-13T13:24:36.787Z",
+      "id": 2810006,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "pos": 0
+        },
+        "content": {
+          "type": "textarea",
+          "pos": 1
+        },
+        "image": {
+          "type": "asset",
+          "pos": 2
+        },
+        "cta": {
+          "type": "multilink",
+          "pos": 3,
+          "display_name": "CTA",
+          "email_link_type": true,
+          "asset_link_type": true,
+          "show_anchor": true
+        },
+        "ctaText": {
+          "type": "text",
+          "pos": 4,
+          "display_name": "CTA Text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Hero Banner",
+      "component_group_uuid": "d480355a-5f25-4e68-bc33-0aab2a74c941",
+      "color": null,
+      "icon": "block-monitor",
+      "component_group_name": "Banners"
+    },
+    {
+      "name": "master",
+      "display_name": "Master",
+      "created_at": "2022-08-13T12:03:06.699Z",
+      "updated_at": "2022-08-13T12:11:55.048Z",
+      "id": 2809972,
+      "schema": {
+        "navigation": {
+          "type": "options",
+          "source": "internal_stories",
+          "required": true,
+          "filter_content_type": [
+            "page"
+          ],
+          "key": "items",
+          "pos": 0
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Master",
+      "component_group_uuid": "1767367b-b5c2-49bf-8400-db6d2f642ef8",
+      "color": "#2db47d",
+      "icon": null,
+      "component_group_name": "Aggregation"
+    },
+    {
+      "name": "page",
+      "display_name": "Page",
+      "created_at": "2022-08-12T12:24:19.068Z",
+      "updated_at": "2022-08-13T13:17:21.810Z",
+      "id": 2808615,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "body": {
+          "type": "bloks",
+          "pos": 1
+        },
+        "tab-fee4ff74-c644-4902-96e0-77e837a121f8": {
+          "display_name": "Metadata",
+          "keys": [
+            "title",
+            "description",
+            "ogImage",
+            "test",
+            "test"
+          ],
+          "pos": 2,
+          "type": "tab"
+        },
+        "description": {
+          "type": "textarea"
+        },
+        "ogImage": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Page",
+      "component_group_uuid": "013c5f8d-12da-4b4a-a71d-9ca558bc34e9",
+      "color": "#395ece",
+      "icon": null,
+      "component_group_name": "Pages"
+    }
+  ]
+}
