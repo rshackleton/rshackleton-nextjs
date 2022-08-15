@@ -1,7 +1,7 @@
 import { storyblokEditable } from '@storyblok/js';
 import * as React from 'react';
+import StoryblokLink from '~/components/Misc/StoryblokLink/StoryblokLink';
 import type { HeroBannerStoryblok } from '~/storyblok/storyblok';
-import StoryblokLink from '../StoryblokLink/StoryblokLink';
 
 export type HeroBannerProps = HeroBannerStoryblok;
 

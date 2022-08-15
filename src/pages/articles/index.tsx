@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import type { PageProps } from '~/app';
+import type { ComponentUnion } from '~/components/Blocks/StoryblokComponent';
+import StoryblokComponent from '~/components/Blocks/StoryblokComponent';
 import Layout, { getLayoutProps } from '~/components/Layout/Layout';
-import type { ComponentUnion } from '~/components/StoryblokComponent';
-import StoryblokComponent from '~/components/StoryblokComponent';
 import { StoryblokService } from '~/storyblok/service';
 import type { ArticleStoryblok, PageStoryblok } from '~/storyblok/storyblok';
 

@@ -4,9 +4,9 @@ import type { ParsedUrlQuery } from 'querystring';
 import * as React from 'react';
 import { StoryblokService } from '~/storyblok/service';
 import type { MasterStoryblok, PageStoryblok } from '~/storyblok/storyblok';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
-import type { NavigationItem } from '../Navigation/Navigation';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
+import type { NavigationItem } from './Navigation/Navigation';
 
 export type LayoutProps = {
   navigation: NavigationItem[];

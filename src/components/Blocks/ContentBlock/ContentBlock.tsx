@@ -1,7 +1,7 @@
 import { storyblokEditable } from '@storyblok/js';
 import * as React from 'react';
+import RichText from '~/components/RichText/RichText';
 import type { ContentBlockStoryblok } from '~/storyblok/storyblok';
-import RichText from '../RichText/RichText';
 
 export type ContentBlockProps = ContentBlockStoryblok;
 

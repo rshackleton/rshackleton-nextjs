@@ -1,8 +1,8 @@
 import type { Richtext } from '@storyblok/js';
 import * as React from 'react';
 import { render } from 'storyblok-rich-text-react-renderer';
-import ArticleSummary from '../ArticleSummary/ArticleSummary';
-import Tweet from '../Tweet/Tweet';
+import ArticleSummary from './ArticleSummary/ArticleSummary';
+import Tweet from './Tweet/Tweet';
 
 export type RichTextProps = {
   className?: string;
