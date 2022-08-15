@@ -80,3 +80,23 @@
     }
   }
 }
+
+@layer components {
+  .twitter-tweet-wrapper {
+    @apply w-full;
+
+    .twitter-tweet {
+      @apply mx-auto;
+    }
+
+    &[data-loaded='false'] {
+      height: 0;
+      visibility: hidden;
+    }
+
+    &[data-loaded='true'] {
+      height: auto;
+      visibility: visible;
+    }
+  }
+}

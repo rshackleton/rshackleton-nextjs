@@ -90,7 +90,7 @@ export interface PageStoryblok {
 }
 
 export interface TweetStoryblok {
-  tweetUrl: string;
+  tweetId: string;
   _uid: string;
   component: "tweet";
   [k: string]: any;
