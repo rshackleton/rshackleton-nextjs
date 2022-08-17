@@ -20,6 +20,16 @@ export interface ArticleStoryblok {
   [k: string]: any;
 }
 
+export interface ArticleExternalStoryblok {
+  title: string;
+  date: string;
+  summary: string;
+  url: string;
+  _uid: string;
+  component: "articleExternal";
+  [k: string]: any;
+}
+
 export interface ArticleSummaryStoryblok {
   article: string;
   _uid: string;
@@ -31,6 +41,17 @@ export interface ContentBlockStoryblok {
   content?: any;
   _uid: string;
   component: "contentBlock";
+  [k: string]: any;
+}
+
+export interface ExperienceStoryblok {
+  title: string;
+  company: string;
+  description: any;
+  from: string;
+  until?: string;
+  _uid: string;
+  component: "experience";
   [k: string]: any;
 }
 

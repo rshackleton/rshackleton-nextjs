@@ -76,6 +76,48 @@
       "component_group_name": "Pages"
     },
     {
+      "name": "articleExternal",
+      "display_name": "External Article",
+      "created_at": "2022-08-17T18:27:11.731Z",
+      "updated_at": "2022-08-17T18:28:02.059Z",
+      "id": 2823425,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "pos": 0
+        },
+        "date": {
+          "type": "datetime",
+          "disable_time": true,
+          "required": true,
+          "pos": 1
+        },
+        "summary": {
+          "type": "textarea",
+          "required": true,
+          "pos": 2
+        },
+        "url": {
+          "type": "text",
+          "required": true,
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "External Article",
+      "component_group_uuid": "013c5f8d-12da-4b4a-a71d-9ca558bc34e9",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Pages"
+    },
+    {
       "name": "articleSummary",
       "display_name": "Article Summary",
       "created_at": "2022-08-14T21:21:35.685Z",
@@ -130,6 +172,61 @@
       "color": null,
       "icon": "block-text-c",
       "component_group_name": "Content"
+    },
+    {
+      "name": "experience",
+      "display_name": null,
+      "created_at": "2022-08-17T16:05:57.449Z",
+      "updated_at": "2022-08-17T16:12:22.975Z",
+      "id": 2823078,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "pos": 0
+        },
+        "company": {
+          "type": "text",
+          "pos": 1,
+          "required": true
+        },
+        "description": {
+          "type": "richtext",
+          "required": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "italic",
+            "underline",
+            "paragraph",
+            "list",
+            "olist",
+            "link"
+          ],
+          "pos": 2
+        },
+        "from": {
+          "type": "datetime",
+          "required": true,
+          "disable_time": true
+        },
+        "until": {
+          "type": "datetime",
+          "disable_time": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "experience",
+      "component_group_uuid": "51da654b-c078-4816-a5a5-5cfb5e57186c",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Misc"
     },
     {
       "name": "heroBanner",
@@ -204,10 +301,10 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "Master",
-      "component_group_uuid": "1767367b-b5c2-49bf-8400-db6d2f642ef8",
+      "component_group_uuid": "51da654b-c078-4816-a5a5-5cfb5e57186c",
       "color": "#2db47d",
       "icon": null,
-      "component_group_name": "Aggregation"
+      "component_group_name": "Misc"
     },
     {
       "name": "page",
