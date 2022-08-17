@@ -4,7 +4,6 @@ import type { ParsedUrlQuery } from 'querystring';
 import * as React from 'react';
 import { StoryblokService } from '~/storyblok/service';
 import type { MasterStoryblok, PageStoryblok } from '~/storyblok/storyblok';
-import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import type { NavigationItem } from './Navigation/Navigation';
 
@@ -17,8 +16,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <div id="root" className="site-container">
       <Header items={props.navigation} />
-      <main id="main">{props.children}</main>
-      <Footer />
+      <main id="main" className="site-main">
+        {props.children}
+      </main>
     </div>
   );
 };

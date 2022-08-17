@@ -9,13 +9,16 @@ export type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = (props) => {
   return (
-    <header className="flex flex-col items-center px-4 py-12 text-base">
+    <header className="site-header">
       <Link href="/">
         <a className="inline-block pb-4 font-bold underline-offset-4 text-xl hover:underline">
           Richard Shackleton
         </a>
       </Link>
       <Navigation items={props.items} />
+      <p className="text-slate-500 text-sm">
+        &copy; Richard Shackleton {new Date().getUTCFullYear()}
+      </p>
     </header>
   );
 };

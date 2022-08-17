@@ -13,8 +13,22 @@
   }
 
   .site-container {
-    @apply grid h-full grid-cols-1;
-    grid-template-rows: auto 1fr auto;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    height: 100%;
+  }
+
+  .site-header {
+    @apply pt-8 pl-8 text-base;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+  }
+
+  .site-main {
+    grid-column: 2;
   }
 }
 

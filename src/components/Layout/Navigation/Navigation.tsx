@@ -15,7 +15,7 @@ export type NavigationProps = {
 const Navigation: React.FC<NavigationProps> = (props) => {
   return (
     <nav className={props.className}>
-      <ul className="flex gap-6">
+      <ul className="flex flex-col gap-6">
         {props.items.map((item) => (
           <li key={item.id}>
             <Link href={item.url}>
